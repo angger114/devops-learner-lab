@@ -216,3 +216,34 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+
+lambda\notification-worker\__pycache__
+lambda\order-api\__pycache__
+lambda\user-api\__pycache__
+lambda\websocket-api\__pycache__
+.vscode
+curl_verbose.txt
+deploy.sh
+devops-frontend-deploy.zip
+devops-key.pem
+DevOps.docx
+DevOps.pdf
+DevOps.zip
+task.md
+TechnoDev_DevOps_LKS_Modul3.docx
+TechnoDev_DevOps_LKS_Modul3.md
+arsitektur diagram.png
+architecture.mmd
+_fix_deploy_cognito.py
+_fix_ws.py
+_inject_cognito.py
+_patch_cognito.py
+_patch_deploy_cognito.py
+_redeploy_frontend.sh
+_verify.py
+md2docx.py
+Modul 3.zip
+TechnoDev_DevOps_LKS_Modul3 - Copy.docx
+token
+.github/*
