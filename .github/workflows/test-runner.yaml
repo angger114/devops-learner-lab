@@ -1,0 +1,61 @@
+name: Test Runner
+on:
+  workflow_dispatch:
+
+jobs:
+  verify-runner:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      
+      - name: Print runner info
+        run: |
+          echo "=== Runner Environment ==="
+          echo "Hostname: $(hostname)"
+          echo "OS: $(uname -a)"
+          echo "User: $(whoami)"
+          echo "Working Dir: $(pwd)"
+          echo "CPU Cores: $(nproc)"
+          echo "Memory:"
+          free -h
+          echo "Disk:"
+          df -h /
+          echo "=========================="
+      
+      - name: VerifyDocker
+        run: |
+          echo "=== DockerVerification ==="
+          docker--version
+          dockerrun --rm hello-world
+          echo "Docker is working correctly!"
+          echo "==========================="
+
+      
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+        
+      - name: Verify AWS CLI
+        run: |
+          echo "=== AWS CLI Verification==="
+          aws --version
+          aws sts get-caller-identity
+          echo "AWS Region: ${AWS_REGION:-us-west-2}"
+          echo "AWS CLI is configured correctly!"
+
+      - name: VerifyGit
+        run: |
+          echo "=== Git Verification ==="
+          git --version
+          echo "Git is available!"
+          echo "======================"
+
+
