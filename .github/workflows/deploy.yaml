@@ -144,6 +144,7 @@ jobs:
               --region ${AWS_REGION} \
               --query 'jobId' --output text)
 
+            sleep 60
             aws amplify start-deployment \
               --app-id ${APP_ID} \
               --branch-name main \
