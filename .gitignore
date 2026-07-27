@@ -246,3 +246,8 @@ md2docx.py
 Modul 3.zip
 TechnoDev_DevOps_LKS_Modul3 - Copy.docx
 token
+<<<<<<< HEAD
+=======
+.github/*
+*.zip
+>>>>>>> ed02e67f9345c4ffae9547501305730e32574dc1
