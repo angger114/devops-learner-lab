@@ -28,7 +28,7 @@ jobs:
         run: pip install flake8
 
       - name: Python lint - user-api
-        run: flake8 lambda/user-api/app.py --max-line-length=120 --ignore=E501,W503
+        run: flake8 lambda/user-api/app.py  --ignore=E501,W503
 
       - name: Python lint - order-api
         run: flake8 lambda/order-api/app.py --max-line-length=120 --ignore=E501,W503
